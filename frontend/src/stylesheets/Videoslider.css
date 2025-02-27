@@ -1,0 +1,78 @@
+/* General container */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background slider */
+.background-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure background is behind */
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(30px);
+}
+
+/* Foreground slider (smaller size) */
+.foreground-slider {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 25px;
+  top: 10%; /* Adjust this value to move the foreground slider vertically */
+  left: 15%; /* Adjust this value to move the foreground slider horizontally */
+  width: 70%; /* Make the foreground slider smaller */
+  height: 80%; /* Make the foreground slider smaller */
+  z-index: 9; /* Ensure it’s above the background */
+  pointer-events: auto; /* Make sure the foreground slider is interactable */
+}
+
+.foreground-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(57, 57, 57, 0.5);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: rgb(38, 38, 38);
+}
+
+/* Shared slider styles */
+.slider {
+  display: flex;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
